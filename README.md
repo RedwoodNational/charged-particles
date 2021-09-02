@@ -2,22 +2,27 @@
 Charged particles interactions simulator. OpenGL Interoperability with CUDA.
 
 ## Demo
-![Alt Text](https://github.com/curlysilk53/charged-particles/blob/main/demo.gif)
+![Alt Text](https://github.com/curlysilk53/charged-particles/blob/main/particles_demo.gif)
+
+
+
+## Controls
+
+|    Control    |     Action    |
+|:-------------:|:-------------:|
+| W             | move forward  |
+| A             | move left     |
+| S             | move down     |
+| D             | move right    |
+|mouse left button     | shoot         |
+|mouse cursor         | camera        |
+| ESC           | exit          |
 
 ## Requirements
 
 + Visual Studio 2019
 + CUDA Toolkit 11.1
 + Compatible NVIDIA GPU
-
-## Controls
-Game controls are standard:
-|    Control    |     Action    |
-|:-------------:|:-------------:|
-| W  | Content Cell  |
-| A  | Content Cell  |
-| S  | Content Cell  |
-| D  | Content Cell  |
 
 ## Texture
 Custom image can be used to change particles texture. To provide custom texture it is required for the image to be converted to a special format. First eight bytes of the file should contain texture dimensions (4 bytes for width and 4 bytes for height), the rest part should contain pixels themself (4 bytes for each pixel). Texture should be named as data.in and placed in the same folder as the exutable file. 
@@ -39,4 +44,7 @@ float vb = 30;        // bullet speed
 float shift_z = 0.75; // shift the tension map  
 float radius = 1;     // particles radius
 ```
+## Notes
 
++ CPU is used to compute particles behaviour
++ GPU is used to generate floors tension map

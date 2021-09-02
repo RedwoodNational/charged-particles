@@ -23,22 +23,24 @@ static void HandleError(cudaError_t err, const char* file, int line) {
 
 std::random_device rd;      // генератор случайных чисел
 std::mt19937 mersenne(rd());// алгоритм мерсенна
-{{
-int a         = 15;    // половина стороны куба   
-int n         = 150;   // количество частиц  
-float eps     = 1e-3;  // избежать деление на ноль  
-float wc      = 0.99;  // коэффициент замедления  
-float k       = 50.0;  // коэффициент пропорциональности  
-float dt      = 0.01;  // шаг интегрирования  
-float g       = 20;    // ускорение свободного падения  
-float qi      = 1;     // заряды частиц  
-float qc      = 30;    // заряд камеры  
-float qb      = 50;    // заряд пули  
-float vb      = 30;    // скорость пули  
+
+int a         = 15;    // половина стороны куба
+int n         = 150;   // количество частиц
+float eps     = 1e-3;  // избежать деление на ноль
+float wc      = 0.99;  // коэффициент замедления
+float k       = 50.0;  // коэффициент пропорциональности
+float dt      = 0.01;  // шаг интегрирования
+float g       = 20;  // ускорение свободного падения
+float qi      = 1;     // заряды частиц
+float qc      = 30;    // заряд камеры
+float qb      = 50;    // заряд пули
+float vb      = 30;    // скорость пули
 float shift_z = 0.75;  // сдвиг карты напряженности
 
 float radius = 1;
-}}
+std::uniform_int_distribution<> dist_x(-a + radius, a - radius);    // распределение частиц по x
+std::uniform_int_distribution<> dist_y(-a + radius, a - radius);    // распределение частиц по y
+std::uniform_int_distribution<> dist_z(0 + radius, 2 * a - radius); // распределение частиц по z
 
 
 std::vector<float> pq;
