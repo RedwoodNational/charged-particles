@@ -25,7 +25,7 @@ Charged particles interactions simulator. OpenGL Interoperability with CUDA.
 + Compatible NVIDIA GPU
 
 ## Texture
-Custom image can be used to change particles texture. To provide custom texture it is required for the image to be converted to a special format. First eight bytes of the file should contain texture dimensions (4 bytes for width and 4 bytes for height), the rest part should contain pixels themself (4 bytes for each pixel). Texture should be named as data.in and placed in the same folder as the exutable file. 
+Custom image can be used to change particles texture. To provide custom texture it is required for the image to be converted to a special format. First eight bytes of the file should contain texture dimensions (4 bytes for width and 4 bytes for height), the rest part should contain pixels themself (4 bytes for each pixel). Texture should be named as in.data and placed in the same folder as the exutable file. 
 
 ## Parameters
 To change the behavior of the model it is possible to adjust internal constants that are responsible for physical properties. 
